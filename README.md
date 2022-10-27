@@ -87,6 +87,24 @@ Head over to [faucets.chain.link](https://faucets.chain.link/) and get some tesn
 yarn deploy --network mumbai
 ```
 
+## Scripts
+
+After deploy to a testnet or local net, you can run the scripts, examples: [or you can add the script into package.json
+
+```
+yarn hardhat run scripts/fund.ts
+```
+
+or after putting in package.json
+```
+"scripts": {
+ "fund": "yarn hardhat run scripts/fund.ts",
+}
+```
+Run
+```
+yarn deploy
+```
 ## Estimate gas
 
 You can estimate how much gas things cost by running:
