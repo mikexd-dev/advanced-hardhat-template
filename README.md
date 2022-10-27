@@ -1,17 +1,17 @@
-# Hardhat Fund Me - Typescript Edition
 
-This is a section of the Javascript Blockchain/Smart Contract FreeCodeCamp Course.
+# Hardhat Template - Typescript Edition
 
-Video Coming soon...
+Hardhat Typescript Template - adapted from Patrick Collins
 
-[Full Repo](https://github.com/smartcontractkit/full-blockchain-solidity-course-js)
+FundMe.sol contains some of the best practice of writing smart contracts according to the layout and structure as defined by the [solidity documentation](https://docs.soliditylang.org/en/v0.8.14/layout-of-source-files.html)
 
-- [Hardhat Fund Me - Typescript Edition](#hardhat-fund-me---typescript-edition)
+
+- [Hardhat Template - Typescript Edition](#hardhat-template---typescript-edition)
 - [Getting Started](#getting-started)
   - [Requirements](#requirements)
   - [Quickstart](#quickstart)
   - [Typescript](#typescript)
-- [Useage](#useage)
+- [Usage](#usage)
   - [Testing](#testing)
     - [Test Coverage](#test-coverage)
 - [Deployment to a testnet or mainnet](#deployment-to-a-testnet-or-mainnet)
@@ -22,10 +22,6 @@ Video Coming soon...
     - [Typescript differences](#typescript-differences)
 - [Linting](#linting)
 - [Thank you!](#thank-you)
-
-This project is apart of the Hardhat FreeCodeCamp video.
-
-Video coming soon...
 
 # Getting Started
 
@@ -44,18 +40,10 @@ Video coming soon...
 ## Quickstart
 
 ```
-git clone --branch typescript https://github.com/PatrickAlphaC/hardhat-fund-me-fcc
-cd hardhat-fund-me-fcc
+git clone https://github.com/mikexd-dev/hardhat-template.git
+cd hardhat-template
 yarn
 yarn typechain
-```
-
-## Typescript
-
-If you want to get to typescript and you cloned the javascript version, just run:
-
-```
-git checkout typescript
 ```
 
 # Useage
@@ -63,31 +51,31 @@ git checkout typescript
 Deploy:
 
 ```
-yarn hardhat deploy
+yarn deploy
 ```
 
 ## Testing
 
 ```
-yarn hardhat test
+yarn test
 ```
 
 ### Test Coverage
 
 ```
-yarn hardhat coverage
+yarn test:coverage
 ```
 
 
 # Deployment to a testnet or mainnet
 
-1. Setup environment variabltes
+1. Setup environment variables
 
-You'll want to set your `KOVAN_RPC_URL` and `PRIVATE_KEY` as environment variables. You can add them to a `.env` file, similar to what you see in `.env.example`.
+You'll want to set your `MUMBAI_RPC_URL` and `PRIVATE_KEY` as environment variables. You can add them to a `.env` file, similar to what you see in `.env.example`.
 
 - `PRIVATE_KEY`: The private key of your account (like from [metamask](https://metamask.io/)). **NOTE:** FOR DEVELOPMENT, PLEASE USE A KEY THAT DOESN'T HAVE ANY REAL FUNDS ASSOCIATED WITH IT.
   - You can [learn how to export it here](https://metamask.zendesk.com/hc/en-us/articles/360015289632-How-to-Export-an-Account-Private-Key).
-- `KOVAN_RPC_URL`: This is url of the kovan testnet node you're working with. You can get setup with one for free from [Alchemy](https://alchemy.com/?a=673c802981)
+- `MUMBAI_RPC_URL`: This is url of the MUMBAI testnet node you're working with. You can get setup with one for free from [Alchemy](https://alchemy.com)
 
 2. Get testnet ETH
 
@@ -96,20 +84,7 @@ Head over to [faucets.chain.link](https://faucets.chain.link/) and get some tesn
 3. Deploy
 
 ```
-yarn hardhat deploy --network kovan
-```
-
-## Scripts
-
-After deploy to a testnet or local net, you can run the scripts. 
-
-```
-yarn hardhat run scripts/fund.ts
-```
-
-or
-```
-yarn hardhat run scripts/withdraw.ts
+yarn deploy --network mumbai
 ```
 
 ## Estimate gas
@@ -117,7 +92,7 @@ yarn hardhat run scripts/withdraw.ts
 You can estimate how much gas things cost by running:
 
 ```
-yarn hardhat test
+yarn test
 ```
 
 And you'll see and output file called `gas-report.txt`
@@ -164,11 +139,3 @@ yarn lint:fix
 
 # Thank you!
 
-If you appreciated this, feel free to follow me or donate!
-
-ETH/Polygon/Avalanche/etc Address: 0x9680201d9c93d65a3603d2088d125e955c73BD65
-
-[![Patrick Collins Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/PatrickAlphaC)
-[![Patrick Collins YouTube](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/channel/UCn-3f8tw_E1jZvhuHatROwA)
-[![Patrick Collins Linkedin](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/patrickalphac/)
-[![Patrick Collins Medium](https://img.shields.io/badge/Medium-000000?style=for-the-badge&logo=medium&logoColor=white)](https://medium.com/@patrick.collins_58673/)
