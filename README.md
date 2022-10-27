@@ -40,7 +40,7 @@ FundMe.sol contains some of the best practice of writing smart contracts accordi
 ## Quickstart
 
 ```
-git clone https://github.com/mikexd-dev/hardhat-template.git
+git clone https://github.com/mikexd-dev/advanced-hardhat-template.git
 cd hardhat-template
 yarn
 yarn typechain

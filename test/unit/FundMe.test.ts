@@ -55,6 +55,14 @@ describe("FundMe", function () {
     beforeEach(async () => {
       await fundMe.fund({ value: ethers.utils.parseEther("1") });
     });
+    it("Only allows the owner to withdraw", async () => {
+      const accounts = await ethers.getSigners();
+      const attacker = accounts[1];
+      const attackerConnectedContract = await fundMe.connect(attacker);
+      await expect(
+        attackerConnectedContract.withdraw()
+      ).to.be.revertedWithCustomError(fundMe, "FundMe__NotOwner");
+    });
     it("gives a single funder all their ETH back", async () => {
       // Arrange
       const startingFundMeBalance = await fundMe.provider.getBalance(
@@ -127,6 +135,7 @@ describe("FundMe", function () {
         deployer.address
       );
       // Assert
+      assert.equal(endingFundMeBalance.toString(), "0");
       assert.equal(
         startingFundMeBalance.add(startingDeployerBalance).toString(),
         endingDeployerBalance.add(withdrawGasCost).toString()
